@@ -1,6 +1,6 @@
 # Py-minusi Compiler Project
 
-Welcome to my Py-minusi Compiler Project!
+Welcome to my Py-minus Compiler Project!
 
 This is a one-pass compiler for a simplified version of Python programming language. The compiler is built to cover the main components of a compiler:
 
