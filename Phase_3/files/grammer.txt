@@ -1,0 +1,56 @@
+Program Statements
+Statements Statement ; Statements
+Statements EPSILON
+Statement Compound_stmt
+Statement Simple_stmt
+Simple_stmt Assignment_Call
+Simple_stmt Return_stmt
+Simple_stmt Global_stmt
+Simple_stmt break #break
+Simple_stmt continue #continue
+Compound_stmt Function_def #set_return_null #end_func
+Compound_stmt If_stmt
+Compound_stmt Iteration_stmt
+Assignment_Call #pid ID B
+B = #assign_flag C
+B [ Expression ] #find_array_value = #assign_flag C
+B ( Arguments ) #call
+C Expression #assign
+C [ Expression #create_vector List_Rest ]
+List_Rest , Expression #add_length List_Rest
+List_Rest EPSILON
+Return_stmt return Return_Value
+Return_Value Expression #set_return
+Return_Value EPSILON #set_return_null
+Global_stmt global #pid ID
+Function_def def #def_func ID ( Params ) : Statements
+Params #pid #add_var ID Params_Prime
+Params EPSILON
+Params_Prime , #pid #add_var ID Params_Prime
+Params_Prime EPSILON
+If_stmt if Relational_Expression #save_if : Statements Else_block
+Else_block else : #jpf_save Statements #jp
+Else_block EPSILON #jpf
+Iteration_stmt while #label ( Relational_Expression ) #save Statements #while
+Relational_Expression Expression #save_op Relop Expression #check
+Relop ==
+Relop <
+Expression Term Expression_Prime
+Expression_Prime + Term #add Expression_Prime
+Expression_Prime - Term #sub Expression_Prime
+Expression_Prime EPSILON
+Term Factor Term_Prime
+Term_Prime * Factor #mult Term_Prime
+Term_Prime EPSILON
+Factor Atom Power
+Power ** Factor #unify_power
+Power Primary
+Primary [ Expression ] #find_array_value Primary
+Primary ( Arguments ) #call Primary
+Primary EPSILON
+Arguments Expression Arguments_Prime
+Arguments EPSILON
+Arguments_Prime , Expression Arguments_Prime
+Arguments_Prime EPSILON
+Atom #pid ID
+Atom #push_num NUM
