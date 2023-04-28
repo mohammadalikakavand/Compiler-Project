@@ -1,4 +1,4 @@
-# Py-minusi Compiler Project
+# Py-minus Compiler Project
 
 Welcome to my Py-minus Compiler Project!
 
